@@ -24,10 +24,11 @@
     <div class="main" ng-controller="MainCtrl">
 
       <div class="row">
+
         <div class="col-md-2 side">
            <button ng-mouseenter="tab=1" ng-init="tab=0" ng-hide="tab===1" type="button" class="btn btn-lg btn-primary cta">Take a Chance<span class="glyphicon glyphicon-chevron-right"></span></button>
-           <div class="userinput" ng-show="tab===1" ng-hide="tab===0">
-             <div class="input-group">
+
+           <div class="userinput" ng-show="tab===1" ng-hide="tab===0" ng-controller="MainCtrl">
                <div class="form-group">
                 <label>
                   <span class="glyphicon glyphicon-cutlery "></span> Cuisine
@@ -39,10 +40,8 @@
                  <label>
                    <span class="glyphicon glyphicon-road">Distance</span>
                  </label>
-                 <input type="text" class="form-control" ng-model="selectedDistance" data-min-length="0" data-html="1" data-animation="am-flip-x" ng-options="distance for distance in distances" placeholder="How Far?" bs-typeahead>
+                 <input type="text" class="form-control" ng-model="selectedDistance"  data-animation="am-flip-x" ng-options="distance for distance in distances" placeholder="How Far in Miles?" bs-typeahead>
                 </div>
-
-              </div>
            </div>
         </div>
 
