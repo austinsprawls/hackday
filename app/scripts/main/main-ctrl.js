@@ -2,58 +2,44 @@
 
 angular.module('rr')
   .controller('MainCtrl', function ($scope, $http) {
-    $scope.awesomeThings = [
-      {
-        'key': 'angular',
-        'title': 'AngularJS',
-        'url': 'https://angularjs.org/',
-        'description': 'HTML enhanced for web apps!',
-        'logo': 'angular.png'
-      },
-      {
-        'key': 'browsersync',
-        'title': 'BrowserSync',
-        'url': 'http://browsersync.io/',
-        'description': 'Time-saving synchronised browser testing.',
-        'logo': 'browsersync.png'
-      },
-      {
-        'key': 'gulp',
-        'title': 'GulpJS',
-        'url': 'http://gulpjs.com/',
-        'description': 'The streaming build system.',
-        'logo': 'gulp.png'
-      },
-      {
-        'key': 'jasmine',
-        'title': 'Jasmine',
-        'url': 'http://jasmine.github.io/',
-        'description': 'Behavior-Driven JavaScript.',
-        'logo': 'jasmine.png'
-      },
-      {
-        'key': 'karma',
-        'title': 'Karma',
-        'url': 'http://karma-runner.github.io/',
-        'description': 'Spectacular Test Runner for JavaScript.',
-        'logo': 'karma.png'
-      },
-      {
-        'key': 'protractor',
-        'title': 'Protractor',
-        'url': 'https://github.com/angular/protractor',
-        'description': 'End to end test framework for AngularJS applications built on top of WebDriverJS.',
-        'logo': 'protractor.png'
-      },
-      {
-        'key': 'bootstrap',
-        'title': 'Bootstrap',
-        'url': 'http://getbootstrap.com/',
-        'description': 'Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web.',
-        'logo': 'bootstrap.png'
-      }
-    ];
-    angular.forEach($scope.awesomeThings, function(awesomeThing) {
-      awesomeThing.rank = Math.random();
-    });
+
+    var clientId = 'RS2U4S0ERDPWHVWPBCGMGSYC2SZ13YS5FF4X4HEXHQTHKFS0',
+    clientSecret = '5LN5C5XWFLWIFOTS2PBYZZRLNWBSL5NJFPNXG5VYVUTAM4AV',
+    formattedDate = date.format("{FullYear}{Month:2}{Date:2}"),
+    status,
+    lat,
+    longi,
+    fsRequest,
+    setData;
+
+    setData = function(data) {
+       status = data.status;
+       var lat = data.lat;
+       longi = data.lon;
+       fsRequest = ('https://api.foursquare.com/v2/venues/search?intent=browse&near=' + lat + ',' + longi + '&radius=19400&categoryId=4d4b7105d754a06374d81259&query=Restaurant&client_id=' + clientId + '&client_secret=' + clientSecret + '&v=20140814');
+       console.log("variables received for 4s call");
+       console.log(fsRequest);
+     };
+
+    $http({method: 'GET', url: 'http://ip-api.com/json'}).
+     success(function(data, status, headers, config) {
+       // this callback will be called asynchronously
+       // when the response is available
+       console.log("location oject received");
+       setData(data);
+
+     }).
+     error(function(data, status, headers, config) {
+       // called asynchronously if an error occurs
+       // or server returns response with an error status.
+       console.log("location not received");
+     });
+
+     console.log(lat);
+    // formattedDate =
+    // var fsRequest = $.getJSON('https://api.foursquare.com/v2/venues/search?intent=browse&near=' + lat + ', ' + longi + '&radius=19400&categoryId=4d4b7105d754a06374d81259&query=Restaurant&client_id=' + clientId + '&client_secret=' + clientSecret + '&v=' + formattedDate);
+
+
+
+
   });
