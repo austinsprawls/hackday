@@ -25,12 +25,23 @@
 
       <div class="row">
         <div class="col-md-2 side">
-
+           <button ng-mouseenter="tab=1" ng-init="tab=0" ng-hide="tab===1" type="button" class="btn btn-lg btn-primary cta">Take a Chance<span class="glyphicon glyphicon-chevron-right"></span></button>
+           <div class="userinput" ng-show="tab===1" ng-hide="tab===0">
+             <div class="input-group">
+               <div class="form-group">
+                <label>
+                  <i class="fa fa-globe"></i> Cuisine
+                </label>
+                <input type="text" class="form-control" ng-model="selectedCuisine" ng-options="cuisine for cuisine in cuisines" placeholder="Enter cuisine" bs-typeahead>
+                </div>
+              </div>
+           </div>
         </div>
-        <div class="col-md-10 jumbo">
+
+
+        <div ng-mousedown="tab=0" class="col-md-10 jumbo">
           <h1>restaurant roulette </h1>
-          <h3>its up to fate</h3>
-          <button type="button" class="btn btn-lg btn-primary">Take a Chance</button>
+          <h3>it's up to fate</h3>
         </div>
       </div>
 
@@ -53,6 +64,8 @@
       ga('create','UA-XXXXX-X');ga('send','pageview');
     </script>
 
+
+
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/angular/angular.js"></script>
@@ -62,6 +75,12 @@
     <!-- build:js({app,.tmp}) scripts/main.js -->
     <script src="scripts/rr.js"></script>
     <script src="scripts/main/main-ctrl.js"></script>
+    <script src="scripts/parse-option.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js"></script>
+    <script src="bower_components/angular-strap/dist/angular-strap.min.js"></script>
+    <script src="bower_components/angular-strap/dist/angular-strap.tpl.min.js"></script>
+
+
     <!-- inject:partials -->
     <!-- endinject -->
     <!-- endbuild -->
