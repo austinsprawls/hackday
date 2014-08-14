@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('rr')
-  .controller('MainCtrl', function ($scope) {
+  .controller('MainCtrl', function ($scope, $http) {
     $scope.awesomeThings = [
       {
         'key': 'angular',
