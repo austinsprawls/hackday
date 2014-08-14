@@ -7,7 +7,7 @@ angular.module('rr')
     $scope.cuisines = ["American", "Chinese", "Greek", "Thai", "Jamacian", "Mexican" ];
 
     $scope.selectedDistance = "";
-    $scope.distances = ['0-1 Mile', '1-5 Miles', '5+ Miles'];
+    $scope.distances = ['0.5 Mile', '1 Mile', '2 Miles', '3 Miles', '4 Miles'];
 
   });
 
