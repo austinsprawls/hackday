@@ -16,3 +16,42 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
     width: 50px;
   }
 }
+
+body {
+  font-family: 'Muli', sans-serif;
+  background: url('/images/dark_bg.jpg') no-repeat;
+  background-size: cover;
+  height:100%;
+  color: #fff;
+}
+
+.side{
+  background: black;
+}
+
+.jumbo{
+  text-align: center;
+  margin-top:10%;
+
+  h1 {
+    margin: 2%;
+  }
+  h3 {
+    margin:2%;
+  }
+  button {
+    background:#1E2744;
+    border: 1px solid #fff;
+  }
+}
+
+
+
+.footer{
+  position: absolute;
+  bottom:0;
+  width: 100%;
+  height:20px;
+  text-align:center;
+
+}
