@@ -16,3 +16,67 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
     width: 50px;
   }
 }
+
+body {
+  font-family: 'Muli', sans-serif;
+  background: url('/images/dark_bg.jpg') no-repeat;
+  background-size: cover;
+  height:100%;
+  color: #fff;
+
+}
+
+.side{
+  padding:2%;
+  button {
+    background:rgba(30, 39, 68, 0.8);
+    border: 1px solid #fff;
+    &:hover{
+      background:none;
+      border:none;
+    }
+
+  }
+
+  input:focus, select:focus, textarea:focus, button:focus{
+    outline: none;
+    border: none;
+    color:white;
+    background-color:#1E2744;
+    border-bottom: 1px solid #fff;
+  }
+  // make form inputs modern
+  input{
+    background: none;
+    border: none;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+  // color the header tags
+  }
+}
+
+.jumbo{
+  text-align: center;
+  margin-top:10%;
+
+  h1 {
+    margin: 2%;
+  }
+  h3 {
+    margin:2%;
+  }
+}
+
+
+
+.footer{
+  position: absolute;
+  bottom:0;
+  width: 100%;
+  height:20px;
+  text-align:center;
+}
+
+.glyphicon-chevron-right{
+  font-size: 1.2em;
+}

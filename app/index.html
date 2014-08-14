@@ -9,6 +9,7 @@
 
     <!-- build:css({.tmp,app}) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
     <!-- endbuild -->
 
     <!--Oauth stuff-->
@@ -25,28 +26,45 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div class="container" ng-controller="MainCtrl">
-    
-      <nav class="navbar navbar-static-top navbar-inverse">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#">Gulp Angular</a>
+    <div class="main" ng-controller="MainCtrl">
+
+      <div class="row">
+        <div class="col-md-2 side">
+           <button ng-mouseenter="tab=1" ng-init="tab=0" ng-hide="tab===1" type="button" class="btn btn-lg btn-primary cta">Take a Chance<span class="glyphicon glyphicon-chevron-right"></span></button>
+           <div class="userinput" ng-show="tab===1" ng-hide="tab===0">
+             <div class="input-group">
+               <div class="form-group">
+                <label>
+                  <span class="glyphicon glyphicon-cutlery "></span> Cuisine
+                </label>
+                <input type="text" class="form-control" ng-model="selectedCuisine" ng-options="cuisine for cuisine in cuisines" placeholder="Enter cuisine" bs-typeahead>
+                </div>
+
+                <div class="form-group">
+                 <label>
+                   <span class="glyphicon glyphicon-road">Distance</span>
+                 </label>
+                 <input type="text" class="form-control" ng-model="selectedDistance" data-min-length="0" data-html="1" data-animation="am-flip-x" ng-options="distance for distance in distances" placeholder="How Far?" bs-typeahead>
+                </div>
+
+              </div>
+           </div>
         </div>
-    
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
-          <ul class="nav navbar-nav">
-            <li class="active"><a ng-href="#">Home</a></li>
-            <li><a ng-href="#">About</a></li>
-            <li><a ng-href="#">Contact</a></li>
-          </ul>
+
+
+        <div ng-mousedown="tab=0" class="col-md-10 jumbo">
+          <h1>restaurant roulette </h1>
+          <h3>it's up to fate</h3>
         </div>
-      </nav>
-    
-      <div class="footer">
-        <p>With ♥ from <a href="https://twitter.com/Swiip">@Swiip</a></p>
       </div>
-    
+
+      <div class="footer">
+        <p>With ♥ from Joey G, Daniel Cox &amp; Austin Sprawls</p>
+      </div>
+
+
     </div>
-    
+
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
@@ -57,6 +75,8 @@
       r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
       ga('create','UA-XXXXX-X');ga('send','pageview');
     </script>
+
+
 
     <!-- build:js scripts/vendor.js -->
 
@@ -69,6 +89,12 @@
     <script src="scripts/rr.js"></script>
     <script src="scripts/date.js"></script>
     <script src="scripts/main/main-ctrl.js"></script>
+    <script src="scripts/parse-option.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js"></script>
+    <script src="bower_components/angular-strap/dist/angular-strap.min.js"></script>
+    <script src="bower_components/angular-strap/dist/angular-strap.tpl.min.js"></script>
+
+
     <!-- inject:partials -->
     <!-- endinject -->
     <!-- endbuild -->
