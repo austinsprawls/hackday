@@ -6,22 +6,6 @@ angular.module('rr', ['mgcrea.ngStrap','mgcrea.ngStrap.tooltip','mgcrea.ngStrap.
 	// var ipLocate = $.getJSON('http://ip-api.com/json'),
 	// located = $.parseJSON(ipLocate.responseText);
 
-	var ipLocate = $http({method: 'GET', url: 'http://ip-api.com/json'}).
-	   success(function(data, status, headers, config) {
-	     // this callback will be called asynchronously
-	     // when the response is available
-	     console.log("fucking worked!");
-	   }).
-	   error(function(data, status, headers, config) {
-	     // called asynchronously if an error occurs
-	     // or server returns response with an error status.
-	     console.log("dammit!");
-	   });
-
-
-
-
-
 	var longi = located.lon,
 	lat = located.lat,
 	clientId = 'RS2U4S0ERDPWHVWPBCGMGSYC2SZ13YS5FF4X4HEXHQTHKFS0',
