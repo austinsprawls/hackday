@@ -2,16 +2,16 @@
 
 angular.module('rr')
 
+
   .controller('MainCtrl', function ($scope, $http) {
 
     $scope.selectedCuisine = "";
     $scope.cuisines = ["American", "Chinese", "Greek", "Thai", "Jamacian", "Mexican" ];
 
     $scope.selectedDistance = "";
-    $scope.distances = ['0-1 Mile', '1-5 Miles', '5+ Miles'];
+    $scope.distances = ['0.5 Mile', '1 Mile', '2 Miles', '3 Miles', '4 Miles'];
+
     $scope.result = {};
-
-
 
     var clientId = 'RS2U4S0ERDPWHVWPBCGMGSYC2SZ13YS5FF4X4HEXHQTHKFS0',
     clientSecret = '5LN5C5XWFLWIFOTS2PBYZZRLNWBSL5NJFPNXG5VYVUTAM4AV',
@@ -39,7 +39,7 @@ angular.module('rr')
           for(var i=0; i < restaurantArray.length; i++) {
             $scope.result = restaurantArray[i];
           }
-          
+
 
         }).
         error(function(data, status, headers, config) {
@@ -62,7 +62,6 @@ angular.module('rr')
        // or server returns response with an error status.
        console.log("location not received");
      });
-    
 
   });
 
