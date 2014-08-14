@@ -30,10 +30,18 @@
              <div class="input-group">
                <div class="form-group">
                 <label>
-                  <i class="fa fa-globe"></i> Cuisine
+                  <span class="glyphicon glyphicon-cutlery "></span> Cuisine
                 </label>
                 <input type="text" class="form-control" ng-model="selectedCuisine" ng-options="cuisine for cuisine in cuisines" placeholder="Enter cuisine" bs-typeahead>
                 </div>
+
+                <div class="form-group">
+                 <label>
+                   <span class="glyphicon glyphicon-road">Distance</span>
+                 </label>
+                 <input type="text" class="form-control" ng-model="selectedDistance" data-min-length="0" data-html="1" data-animation="am-flip-x" ng-options="distance for distance in distances" placeholder="How Far?" bs-typeahead>
+                </div>
+
               </div>
            </div>
         </div>

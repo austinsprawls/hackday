@@ -27,6 +27,7 @@ body {
 }
 
 .side{
+  padding:2%;
   button {
     background:rgba(30, 39, 68, 0.8);
     border: 1px solid #fff;
@@ -34,7 +35,9 @@ body {
       background:none;
       border:none;
     }
+
   }
+
   input:focus, select:focus, textarea:focus, button:focus{
     outline: none;
     border: none;
@@ -74,6 +77,6 @@ body {
   text-align:center;
 }
 
-.glyphicon{
-  font-size: 2em;
+.glyphicon-chevron-right{
+  font-size: 1.2em;
 }
