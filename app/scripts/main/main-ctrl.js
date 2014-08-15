@@ -6,7 +6,7 @@ angular.module('rr')
   .controller('MainCtrl', function ($scope, $http) {
 
     $scope.selectedCuisine = "";
-    $scope.cuisines = ["American", "Chinese", "Greek", "Thai", "Jamacian", "Mexican" ];
+    $scope.cuisines = [];
 
     $scope.selectedDistance = "";
     $scope.distances = ['0.5 Mile', '1 Mile', '2 Miles', '3 Miles', '4 Miles'];
@@ -42,9 +42,16 @@ angular.module('rr')
           // }
           var randomized = Math.floor(Math.random() * (restaurantArray.length)) - 1;
           $scope.rest1 = restaurantArray[randomized];
+          randomized = Math.floor(Math.random() * (restaurantArray.length)) - 1;
           $scope.rest2 = restaurantArray[randomized];
           console.log($scope.rest1);
+          console.log($scope.rest2);
 
+          for(var i=0; i < restaurantArray.length; i++) {
+            $scope.cuisines.push(restaurantArray[i].categories[0].shortName);
+                    }
+          // console.log($scope.rest1.categories[0].shortName);
+          console.log($scope.cuisines);
         }).
         error(function(data, status, headers, config) {
           // called asynchronously if an error occurs
