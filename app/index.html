@@ -54,7 +54,7 @@
         </div>
 
 
-        <div ng-mousedown="tab=0" class="col-md-10 jumbo">
+        <div class="col-md-10 jumbo">
           <div class='main_body' ng-hide='tab===1' ng-show='tab===0'>
             <h1>restaurant roulette </h1>
             <h3>it's up to fate</h3>
@@ -69,7 +69,12 @@
                   <div class="col-md-5 col-md-offset-1">
                     <div class='restaurant1 panel panel-default'>
                       <div class="panel-body">
-                        Basic panel example
+                        <h2>{{rest1.name}}</h2>
+                        <p>{{rest1.name}} has {{rest1.stats.checkinsCount}} check-ins.</p>
+                        <p>{{rest1.stats.usersCount}} people have visited.</p>
+                        <p>{{rest1.stats.tipCount}} tips provided.</p>
+                        <a href="{{rest1.url}}">Visit website</a>
+                        <button type="button" class="btn btn-primary" id='map1'>Get Directions</button>
                       </div>
                     </div>
                   </div>
@@ -77,7 +82,12 @@
                   <div class="col-md-5">
                     <div class='restaurant2 panel panel-default'>
                       <div class="panel-body">
-                        Basic panel example
+                        <h2>{{rest2.name}}</h2>
+                        <p>{{rest2.name}} has {{rest2.stats.checkinsCount}} check-ins.</p>
+                        <p>{{rest2.stats.usersCount}} people have visited.</p>
+                        <p>{{rest2.stats.tipCount}} tips provided.</p>
+                        <a href="{{rest2.url}}">Visit website</a>
+                        <button type="button" class="btn btn-primary" id='map2'>Get Directions</button>
                       </div>
                     </div>
                   </div>

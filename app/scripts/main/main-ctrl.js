@@ -52,6 +52,7 @@ angular.module('rr')
                     }
           // console.log($scope.rest1.categories[0].shortName);
           console.log($scope.cuisines);
+
         }).
         error(function(data, status, headers, config) {
           // called asynchronously if an error occurs
