@@ -55,10 +55,36 @@
 
 
         <div ng-mousedown="tab=0" class="col-md-10 jumbo">
-          <h1>restaurant roulette </h1>
-          <h3>it's up to fate</h3>
-        </div>
+          <div class='main_body' ng-hide='tab===1' ng-show='tab===0'>
+            <h1>restaurant roulette </h1>
+            <h3>it's up to fate</h3>
+          </div>
+
+
+
+              <div class='results' ng-hide='tab===0' ng-show='tab===1'>
+
+                <div class='row '>
+
+                  <div class="col-md-5 col-md-offset-1">
+                    <div class='restaurant1 panel panel-default'>
+                      <div class="panel-body">
+                        Basic panel example
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-5">
+                    <div class='restaurant2 panel panel-default'>
+                      <div class="panel-body">
+                        Basic panel example
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
       </div>
+    </div>
 
       <div class="footer">
         <p>With ♥ from Joey G, Daniel Cox &amp; Austin Sprawls</p>
