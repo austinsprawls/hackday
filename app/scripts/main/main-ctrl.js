@@ -11,7 +11,8 @@ angular.module('rr')
     $scope.selectedDistance = "";
     $scope.distances = ['0.5 Mile', '1 Mile', '2 Miles', '3 Miles', '4 Miles'];
 
-    $scope.result = {};
+    $scope.rest1 = {};
+    $scope.rest2 = {};
 
     var clientId = 'RS2U4S0ERDPWHVWPBCGMGSYC2SZ13YS5FF4X4HEXHQTHKFS0',
     clientSecret = '5LN5C5XWFLWIFOTS2PBYZZRLNWBSL5NJFPNXG5VYVUTAM4AV',
@@ -36,10 +37,13 @@ angular.module('rr')
           console.log("4square object received");
           console.log(data.response.venues);
           var restaurantArray = data.response.venues;
-          for(var i=0; i < restaurantArray.length; i++) {
-            $scope.result = restaurantArray[i];
-          }
-
+          // for(var i=0; i < restaurantArray.length; i++) {
+          //   $scope.result = restaurantArray[i];
+          // }
+          var randomized = Math.floor(Math.random() * (restaurantArray.length)) - 1;
+          $scope.rest1 = restaurantArray[randomized];
+          $scope.rest2 = restaurantArray[randomized];
+          console.log($scope.rest1);
 
         }).
         error(function(data, status, headers, config) {
