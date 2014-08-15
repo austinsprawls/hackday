@@ -42,8 +42,10 @@ angular.module('rr')
           // }
           var randomized = Math.floor(Math.random() * (restaurantArray.length)) - 1;
           $scope.rest1 = restaurantArray[randomized];
+          randomized = Math.floor(Math.random() * (restaurantArray.length)) - 1;
           $scope.rest2 = restaurantArray[randomized];
           console.log($scope.rest1);
+
 
         }).
         error(function(data, status, headers, config) {
