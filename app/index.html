@@ -39,7 +39,7 @@
                 <label>
                   <span class="glyphicon glyphicon-cutlery "></span> Cuisine
                 </label>
-                <input type="text" class="form-control" ng-model="selectedCuisine" ng-options="cuisine for cuisine in cuisines" placeholder="Enter cuisine" bs-typeahead>
+                <input type="text" class="form-control" ng-model="selectedCuisine" ng-options="cuisine for cuisine in cuisines" placeholder="Enter cuisine" bs-typeahead  ng-change="changeCuisine(selectedCuisine)">
                 </div>
 
                 <div class="form-group">
@@ -47,7 +47,7 @@
                    <span class="glyphicon glyphicon-road">Distance</span>
                  </label>
 
-                 <input type="text" class="form-control" ng-model="selectedDistance"  data-animation="am-flip-x" ng-options="distance for distance in distances" placeholder="How Far in Miles?" bs-typeahead>
+                 <input type="text" class="form-control" ng-model="selectedDistance" data-animation="am-flip-x" ng-options="distance for distance in distances" placeholder="How Far in Miles?" bs-typeahead ng-change="changeDistance(selectedDistance)" >
                 </div>
 
            </div>
@@ -128,6 +128,7 @@
     <script src="scripts/date.js"></script>
     <script src="scripts/main/main-ctrl.js"></script>
     <script src="scripts/parse-option.js"></script>
+    <script type="text/javascript" src="bower_components/ng-debounce/angular-debounce.js"></script> 
     <!-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js"></script> -->
     <script src="bower_components/angular-strap/dist/angular-strap.min.js"></script>
     <script src="bower_components/angular-strap/dist/angular-strap.tpl.min.js"></script>
