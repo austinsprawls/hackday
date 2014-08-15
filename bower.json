@@ -5,7 +5,7 @@
     "modernizr": "2.8.x",
     "angular": "1.2.x",
     "bootstrap-sass-official": "3.1.x",
-    "ng-debounce": "~0.1.4"
+    "ng-debounce": "~0.1.4",
     "angular-strap": "~2.0.5"
   },
   "devDependencies": {

@@ -5,5 +5,3 @@ angular.module('rr', ['mgcrea.ngStrap','mgcrea.ngStrap.tooltip','mgcrea.ngStrap.
 
 	// var ipLocate = $.getJSON('http://ip-api.com/json'),
 	// located = $.parseJSON(ipLocate.responseText);
-
-	
